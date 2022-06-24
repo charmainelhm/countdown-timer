@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap");
+@use "../abstracts/fonts" as *;
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+h1 {
+  font-size: $fs-600;
+  color: $primary;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
