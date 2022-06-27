@@ -4,11 +4,26 @@
 
 body {
   font-family: "Red Hat Text", sans-serif;
+  font-size: $fs-400;
+  color: $secondary; // temporary
 }
 
 h1 {
   font-size: $fs-600;
   color: $primary;
+}
+
+.flipcard {
+  font-size: $fs-600;
+  font-weight: $bold;
+}
+
+.flipcard__top {
+  color: $accent-dark;
+}
+
+.flipcard__bottom {
+  color: $accent;
 }
 
 .attribution {

@@ -1,0 +1,50 @@
+@use "../abstracts/colors" as *;
+
+$border-radius: 0.15em;
+
+.flipcard {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: $background;
+    width: $border-radius;
+    height: $border-radius;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: calc($border-radius / 2 * -1);
+  }
+
+  &::after {
+    right: calc($border-radius / 2 * -1);
+  }
+
+  & > * {
+    height: 0.75em;
+    line-height: 1;
+    padding: 0.25em;
+    overflow: hidden;
+  }
+
+  &__top {
+    background-color: $flipcard-dark;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    background-color: $flipcard;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+}
