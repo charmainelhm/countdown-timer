@@ -17,3 +17,6 @@
 
 README-template.md
 style-guide.md
+node_modules/
+public/
+package-lock.json
