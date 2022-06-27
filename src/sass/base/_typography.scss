@@ -18,11 +18,13 @@ h1 {
   font-weight: $bold;
 }
 
-.flipcard__top {
+.flipcard__top,
+.top-flip {
   color: $accent-dark;
 }
 
-.flipcard__bottom {
+.flipcard__bottom,
+.bottom-flip {
   color: $accent;
 }
 

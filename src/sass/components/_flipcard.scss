@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as *;
 
 $border-radius: 0.15em;
+$animation-duration: 200ms;
 
 .flipcard {
   display: inline-flex;
@@ -17,6 +18,7 @@ $border-radius: 0.15em;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
   }
 
   &::before {
@@ -34,17 +36,44 @@ $border-radius: 0.15em;
     overflow: hidden;
   }
 
-  &__top {
+  &__top,
+  .top-flip {
     background-color: $flipcard-dark;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
 
-  &__bottom {
+  &__bottom,
+  .bottom-flip {
     display: flex;
     align-items: flex-end;
     background-color: $flipcard;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
+  }
+
+  .top-flip {
+    position: absolute;
+    transform-origin: bottom;
+    animation: top-flip $animation-duration ease-in;
+  }
+  .bottom-flip {
+    position: absolute;
+    bottom: 0;
+    transform-origin: top;
+    animation: bottom-flip $animation-duration ease-out $animation-duration;
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes top-flip {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes bottom-flip {
+  100% {
+    transform: rotateX(0deg);
   }
 }
