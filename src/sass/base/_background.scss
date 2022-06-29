@@ -2,4 +2,8 @@
 
 body {
   background-color: $background;
+  background-image: url(../../images/pattern-hills.svg),
+    url(../../images/bg-stars.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom, center;
 }
