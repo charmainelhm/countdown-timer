@@ -7,3 +7,9 @@ body {
   background-repeat: no-repeat;
   background-position: right bottom, center;
 }
+
+@media screen and (min-width: 900px) {
+  body {
+    background-size: contain;
+  }
+}
