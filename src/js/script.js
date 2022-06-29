@@ -19,7 +19,6 @@ const runCountdown = function (time) {
   seconds = seconds % 3600;
   const mins = Math.floor(seconds / 60);
   seconds = seconds % 60;
-  console.log(days, hours, mins, seconds);
 
   flip(document.querySelector("[data-days]"), days);
   flip(document.querySelector("[data-hours]"), hours);
@@ -39,11 +38,11 @@ const flip = function (flipCard, newNumber) {
   const bottomFlip = document.createElement("div");
   bottomFlip.classList.add("bottom-flip");
 
-  topFlip.textContent = startNumber;
-  bottomFlip.textContent = newNumber; // 90deg to 0deg
+  topFlip.textContent = startNumber.toString().padStart(2, "0");
+  bottomFlip.textContent = newNumber.toString().padStart(2, "0"); // 90deg to 0deg
 
   topFlip.addEventListener("animationstart", () => {
-    topHalf.textContent = newNumber;
+    topHalf.textContent = newNumber.toString().padStart(2, "0");
   });
 
   topFlip.addEventListener("animationend", () => {
@@ -51,7 +50,7 @@ const flip = function (flipCard, newNumber) {
   });
 
   bottomFlip.addEventListener("animationend", () => {
-    bottomHalf.textContent = newNumber;
+    bottomHalf.textContent = newNumber.toString().padStart(2, "0");
     bottomFlip.remove(); // removes bottomFlip div from DOM
   });
 

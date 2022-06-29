@@ -44,7 +44,12 @@ h1 {
   text-align: center;
 
   a {
-    color: hsl(228, 45%, 44%);
+    color: $primary;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: $accent;
+    }
   }
 }
 
