@@ -1,14 +1,16 @@
-.timer,
-.timer__segment {
-  display: flex;
-}
-
 .timer {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
 
   &__segment {
-    flex-direction: column-reverse;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    row-gap: 1.5em;
+    row-gap: 1.5rem;
+
+    .flipcard {
+      order: -1;
+    }
   }
 }

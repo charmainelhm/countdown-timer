@@ -31,6 +31,7 @@ $animation-duration: 200ms;
 
   & > * {
     height: 0.8em;
+    width: 70px;
     line-height: 1;
     padding: 0.3em;
     overflow: hidden;
@@ -38,6 +39,7 @@ $animation-duration: 200ms;
 
   &__top,
   .top-flip {
+    text-align: center;
     background-color: $flipcard-dark;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
@@ -47,6 +49,7 @@ $animation-duration: 200ms;
   .bottom-flip {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     background-color: $flipcard;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
