@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap");
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 1.2rem;
+  color: hsl(237deg, 18%, 59%);
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.timer h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+.flipcard {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+.flipcard__top,
+.top-flip {
+  color: hsl(345deg, 60%, 58%);
+}
+
+.flipcard__bottom,
+.bottom-flip {
+  color: hsl(345deg, 95%, 68%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(0deg, 0%, 100%);
+  transition: color 0.2s ease-in;
+}
+.attribution a:hover {
+  color: hsl(345deg, 95%, 68%);
+}
+
+@media screen and (min-width: 900px) {
+  .flipcard {
+    font-size: 7.5rem;
+  }
+  .timer h2 {
+    font-size: 1.2rem;
+  }
+}
+body {
+  background-color: hsl(234deg, 17%, 12%);
+  background-image: url(../images/pattern-hills.svg), url(../images/bg-stars.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom, center;
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    background-size: contain;
+  }
+}
+.flipcard {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+}
+.flipcard::before, .flipcard::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(234deg, 17%, 12%);
+  width: 0.15em;
+  height: 0.15em;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.flipcard::before {
+  left: -0.075em;
+}
+.flipcard::after {
+  right: -0.075em;
+}
+.flipcard > * {
+  height: 0.8em;
+  width: 70px;
+  line-height: 1;
+  padding: 0.3em;
+  overflow: hidden;
+}
+.flipcard__top,
+.flipcard .top-flip {
+  text-align: center;
+  background-color: hsl(236deg, 21%, 23%);
+  border-top-left-radius: 0.15em;
+  border-top-right-radius: 0.15em;
+}
+.flipcard__bottom,
+.flipcard .bottom-flip {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: hsl(236deg, 21%, 26%);
+  border-bottom-right-radius: 0.15em;
+  border-bottom-left-radius: 0.15em;
+}
+.flipcard .top-flip {
+  position: absolute;
+  transform-origin: bottom;
+  animation: top-flip 200ms ease-in;
+}
+.flipcard .bottom-flip {
+  position: absolute;
+  bottom: 0;
+  transform-origin: top;
+  animation: bottom-flip 200ms ease-out 200ms;
+  transform: rotateX(90deg);
+}
+
+@keyframes top-flip {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+@keyframes bottom-flip {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@media screen and (min-width: 900px) {
+  .flipcard > * {
+    width: 150px;
+  }
+}
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
+
+.socials {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.socials__item {
+  display: inline;
+}
+.socials__item:not(:last-child) {
+  padding-right: 3rem;
+}
+.socials__icon {
+  fill: hsl(237deg, 18%, 59%);
+  transition: fill 0.2s ease-in;
+}
+.socials__link:hover .socials__icon {
+  fill: hsl(345deg, 95%, 68%);
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+.timer__segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+.timer__segment .flipcard {
+  order: -1;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+}
+
+header {
+  flex-grow: 1;
+  display: flex;
+}
+header h1 {
+  margin-top: auto;
+  flex-grow: 1;
+}
+
+main {
+  flex-grow: 2;
+  align-self: center;
+}
+
+footer {
+  flex-grow: 0.5;
+}
+
+/*# sourceMappingURL=style.css.map */

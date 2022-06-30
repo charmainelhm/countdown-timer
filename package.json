@@ -20,7 +20,7 @@
     "build": "npm-run-all copy:html build:*",
     "postbuild:css": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map",
     "postbuild:js": "uglifyjs-folder src/js -eo public/js",
-    "postbuild": "npm-run-all postbuild:css postbuild.js"
+    "postbuild": "npm-run-all postbuild:css postbuild:js"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
